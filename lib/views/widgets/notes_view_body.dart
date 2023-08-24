@@ -17,7 +17,7 @@ class NotesViewBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          CustomAppBar(),
+          CustomAppBar(hint:'Notes' , icon: Icons.search),
           Expanded(
             child: NotesListView(),
           ),
