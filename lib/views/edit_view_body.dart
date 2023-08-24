@@ -15,14 +15,15 @@ class EditNotesViewBody extends StatelessWidget {
             vertical: 70,
           ),
           child: CustomAppBar(
-            hint: 'Edit Note',
+            hint: 'Edit Note', 
             icon: Icons.done,
           ),
         ),
-        CustomTextField(hint: 'New title'),
+        SizedBox(height: 40),
+        CustomTextField(hint: 'New Title'),
         SizedBox(height: 20),
         CustomTextField(
-          hint: 'New content',
+          hint: 'New Content',
           maxLines: 5,
         )
       ]),
