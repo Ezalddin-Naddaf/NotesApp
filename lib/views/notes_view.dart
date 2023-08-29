@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/add_note_bottom_sheet.dart';
-import 'package:notes_app/views/widgets/notes_view_body.dart';
+import 'package:notes_app/views/widgets/add%20note/add_note_bottom_sheet.dart';
+import 'package:notes_app/views/widgets/notes%20list/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -17,7 +17,7 @@ class NotesView extends StatelessWidget {
                 ),
                 context: context,
                 builder: (context) {
-                  return const AddNoteBottomSheet();
+                  return  AddNoteBottomSheet();
                 });
           },
           child: const Icon(
