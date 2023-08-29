@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../constants.dart';
+import '../../../constants.dart';
+
 
 class CustomButtom extends StatelessWidget {
   const CustomButtom({super.key, this.onTap});

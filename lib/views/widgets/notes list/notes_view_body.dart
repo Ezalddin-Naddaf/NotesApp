@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/notes_list_view.dart';
 
-import 'custom_app_bar.dart';
+import '../custom/custom_app_bar.dart';
+import 'notes_list_view.dart';
+
+
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
@@ -12,8 +14,8 @@ class NotesViewBody extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(
         top: 70,
-        right: 40,
-        left: 32,
+        right: 20,
+        left: 15,
       ),
       child: Column(
         children: [
