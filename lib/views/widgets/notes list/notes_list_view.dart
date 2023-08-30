@@ -9,7 +9,7 @@ class NotesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 14.0),
+      padding: const EdgeInsets.only(top: 13.5),
       child: ListView.builder(
         padding: EdgeInsets.zero,
         itemBuilder: (context, index) {
@@ -17,7 +17,7 @@ class NotesListView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               NoteItem(),
-              SizedBox(width: 15),
+              SizedBox(width: 10),
               NoteItem(),
             ],
           );

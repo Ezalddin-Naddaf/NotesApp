@@ -21,14 +21,18 @@ class NoteItem extends StatelessWidget {
         );
       },
       child: Row(
+
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Container(
-              width: 170,
-              height:  170,
+              width: 180,
+              height: 180,
               padding: const EdgeInsets.only(
-                  top: 12, left: 16, bottom: 12, ),
+                top: 11.5,
+                left: 10,
+                bottom: 12,
+              ),
               decoration: BoxDecoration(
                   color: const Color(0xffFFCC80),
                   borderRadius: BorderRadius.circular(16)),
@@ -38,37 +42,53 @@ class NoteItem extends StatelessWidget {
                   ListTile(
                     contentPadding: const EdgeInsets.all(0),
                     trailing: Padding(
-                      padding: const EdgeInsets.only(left: 15.0),
+                      padding: const EdgeInsets.only(bottom:30.0),
                       child: IconButton(
                         onPressed: () {},
-                        icon: Icon(FontAwesomeIcons.trash,
-                            size: 18, color: Colors.black.withOpacity(.7) , ),
+                        icon: Icon(
+                          FontAwesomeIcons.trash,
+                          size: 18,
+                          color: Colors.black.withOpacity(.7),
+                        ),
                       ),
                     ),
                     title: const Padding(
-                      padding: EdgeInsets.only(top: 4, bottom: 8 , left: 5 , ),
+                      padding: EdgeInsets.only(
+                        top: 4,
+                        bottom: 8,
+                        left: 5,
+                      ),
                       child: Text(
                         'Flutter tips',
-                        style: TextStyle(fontSize: 14.3, color: Colors.black, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18.5,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     subtitle: Padding(
-                      padding: const EdgeInsets.only(left:8.0,),
+                      padding: const EdgeInsets.only(
+                        left: 8.0,
+                      ),
                       child: Text(
-                        'How to make your presonal brand stand out  online',
+                        'How to make your presonal brand stand out  online.regjfsadkrocr;',
                         style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 15,
                             height: 1.1,
-                            color: Colors.black.withOpacity(.6)),
+                            color: Colors.black.withOpacity(.4),
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 24.0 , right: 10),
+                    padding: const EdgeInsets.only(top: 15.0, right: 10),
                     child: Text(
                       'May 21/2023',
                       style: TextStyle(
-                          color:const Color.fromARGB(255, 83, 82, 82)..withOpacity(.6), fontSize: 10 , fontWeight: FontWeight.bold),
+                          color: const Color.fromARGB(255, 83, 82, 82)
+                            ..withOpacity(.6),
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold),
                     ),
                   )
                 ],
