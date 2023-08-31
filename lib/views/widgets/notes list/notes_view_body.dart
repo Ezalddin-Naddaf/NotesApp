@@ -15,7 +15,7 @@ class NotesViewBody extends StatelessWidget {
       padding: EdgeInsets.only(
         top: 70,
         right: 20,
-        left: 15,
+        left: 16.4,
       ),
       child: Column(
         children: [

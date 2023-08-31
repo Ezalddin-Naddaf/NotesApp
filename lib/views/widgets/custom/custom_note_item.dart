@@ -26,8 +26,8 @@ class NoteItem extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Container(
-              width: 180,
-              height: 180,
+              width: 182.4,
+              height: 185,
               padding: const EdgeInsets.only(
                 top: 11.5,
                 left: 10,
