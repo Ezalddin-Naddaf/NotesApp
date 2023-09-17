@@ -4,41 +4,41 @@ import 'package:notes_app/constants.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
-      {super.key, required this.hint, this.maxLines = 1, this.onSaved});
+      {super.key,
+      required this.hint,
+      this.onSaved,
+      required this.fontSize,
+      this.MaxLines = 1});
   final String? hint;
-  final int maxLines;
+  final int MaxLines;
   final void Function(String?)? onSaved;
+  final double fontSize;
   @override
   Widget build(
     BuildContext context,
   ) {
-    return TextFormField(
-      onSaved: onSaved,
-      validator: (value) {
-        if (value?.isEmpty ?? true) {
-          return 'Field is required';
-        } else {
-          return null;
-        }
-      },
-      maxLines: maxLines,
-      cursorColor: kPrimaryColor,
-      decoration: InputDecoration(
-        hintText: hint,
-        border: buildBorder(),
-        enabledBorder: buildBorder(),
-        focusedBorder: buildBorder(
-          kPrimaryColor,
-        ),
+    return Padding(
+      padding: const EdgeInsets.only(left: 20.0),
+      child: TextFormField(
+        maxLines: MaxLines,
+        onSaved: onSaved,
+        validator: (value) {
+          if (value?.isEmpty ?? true) {
+            return 'Field is required';
+          } else {
+            return null;
+          }
+        },
+        cursorColor: kPrimaryColor,
+        decoration: InputDecoration.collapsed(
+            hintText: hint, hintStyle: TextStyle(fontSize: fontSize)),
       ),
     );
   }
-
-  OutlineInputBorder buildBorder([color]) {
-    return OutlineInputBorder(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(12),
-        ),
-        borderSide: BorderSide(color: color ?? Colors.white));
-  }
 }
+
+
+
+
+
+
