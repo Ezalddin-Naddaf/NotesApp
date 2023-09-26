@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/cubits/notes_cubits/cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/editNote_view.dart';
 
 class NoteItem extends StatelessWidget {
   const NoteItem({super.key, required this.note});
- final NoteModel note;
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,7 +17,9 @@ class NoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const EditNoteView();
+              return  EditNoteView(
+                note: note,
+              );
             },
           ),
         );
@@ -33,7 +37,7 @@ class NoteItem extends StatelessWidget {
                 bottom: 12,
               ),
               decoration: BoxDecoration(
-                  color: const Color(0xffFFCC80),
+                  color: Color(note.color),
                   borderRadius: BorderRadius.circular(16)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -43,7 +47,10 @@ class NoteItem extends StatelessWidget {
                     trailing: Padding(
                       padding: const EdgeInsets.only(bottom: 30.0),
                       child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          note.delete();
+                          BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                        },
                         icon: Icon(
                           FontAwesomeIcons.trash,
                           size: 18,
@@ -51,16 +58,16 @@ class NoteItem extends StatelessWidget {
                         ),
                       ),
                     ),
-                    title:  Padding(
-                      padding:const EdgeInsets.only(
+                    title: Padding(
+                      padding: const EdgeInsets.only(
                         top: 4,
                         bottom: 8,
                         left: 5,
                       ),
                       child: Text(
                         note.title,
-                        style:const TextStyle(
-                          fontSize: 21.6,
+                        style: const TextStyle(
+                          fontSize: 21,
                           color: Colors.black,
                         ),
                       ),
@@ -70,7 +77,7 @@ class NoteItem extends StatelessWidget {
                         left: 8.0,
                       ),
                       child: Text(
-                       note.subTitle,
+                        note.subTitle,
                         style: TextStyle(
                             fontSize: 15,
                             height: 1.2,

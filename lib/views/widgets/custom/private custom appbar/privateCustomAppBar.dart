@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/notes_view.dart';
-import 'package:notes_app/views/widgets/add_note.dart';
 
 class PrivateCustomAppBar extends StatelessWidget {
   const PrivateCustomAppBar({
-    super.key, this.onTap,
+    super.key,
+    this.onTap,
   });
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20.0),
+      padding:const EdgeInsets.only(left: 20.0),
       child: Row(
         children: [
           Container(
@@ -21,7 +21,7 @@ class PrivateCustomAppBar extends StatelessWidget {
               color: const Color(0xff3a3a3a),
             ),
             child: Padding(
-              padding: EdgeInsets.only(right: 3.5),
+              padding:const EdgeInsets.only(right: 3.5),
               child: IconButton(
                 onPressed: () {
                   Navigator.pop(

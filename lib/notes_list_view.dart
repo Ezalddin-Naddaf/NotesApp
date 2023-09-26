@@ -7,7 +7,6 @@ import 'package:notes_app/views/widgets/custom/custom_note_item.dart';
 class NotesListView extends StatelessWidget {
   const NotesListView({super.key});
 
-  final data = const [];
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
@@ -25,10 +24,14 @@ class NotesListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children:[
-                  NoteItem(note: notes[index]),
+                children: [
+                  NoteItem(
+                    note: notes[index],
+                  ),
                   const SizedBox(width: 10, height: 10),
-                  NoteItem(note: notes[index]),
+                  NoteItem(
+                    note: notes[index],
+                  ),
                 ],
               );
             },

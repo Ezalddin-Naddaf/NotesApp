@@ -9,24 +9,21 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NotesCubit(),
-      child: Scaffold(
-          floatingActionButton: Padding(
-            padding: const EdgeInsets.only(bottom: 28, right: 12),
-            child: FloatingActionButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AddNoteBottonSheet()),
-                );
-              },
-              backgroundColor: const Color(0xff252525),
-              child: const Icon(Icons.add, color: Colors.white),
-            ),
+    return Scaffold(
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(bottom: 28, right: 12),
+          child: FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AddNoteBottonSheet()),
+              );
+            },
+            backgroundColor: const Color(0xff252525),
+            child: const Icon(Icons.add, color: Colors.white),
           ),
-          body: const NotesViewBody()),
-    );
+        ),
+        body: const NotesViewBody());
   }
 }

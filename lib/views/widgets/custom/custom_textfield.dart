@@ -8,18 +8,18 @@ class CustomTextField extends StatelessWidget {
       required this.hint,
       this.onSaved,
       required this.fontSize,
-      this.MaxLines = 1});
+      this.MaxLines = 1, this.onChanged});
   final String? hint;
   final int MaxLines;
   final void Function(String?)? onSaved;
+  final void Function(String)?onChanged;
   final double fontSize;
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20.0),
       child: TextFormField(
+        onChanged: onChanged,
         maxLines: MaxLines,
         onSaved: onSaved,
         validator: (value) {
@@ -36,9 +36,3 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
